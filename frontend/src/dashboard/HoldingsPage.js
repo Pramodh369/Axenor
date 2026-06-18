@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
 
+
 function HoldingsPage() {
   const [holdings, setHoldings] = useState([]);
   const [stock, setStock] = useState("");

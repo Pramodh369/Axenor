@@ -36,7 +36,7 @@ function ProjectHighlights() {
 
   return (
     <div className="container py-5">
-      ```
+    
       <div className="text-center mb-5">
         <h2 className="fw-bold section-title">Project Highlights</h2>
 

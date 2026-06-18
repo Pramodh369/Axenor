@@ -16,8 +16,7 @@ const signup = async (req, res) => {
       });
     }
 
-    const hashedPassword =
-      await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
       name,
@@ -29,7 +28,6 @@ const signup = async (req, res) => {
       message: "User created successfully",
       user,
     });
-
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -50,11 +48,7 @@ const login = async (req, res) => {
       });
     }
 
-    const isMatch =
-      await bcrypt.compare(
-        password,
-        user.password
-      );
+    const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
       return res.status(400).json({
@@ -65,18 +59,19 @@ const login = async (req, res) => {
     const token = jwt.sign(
       {
         id: user._id,
+        name: user.name,
+        email: user.email,
       },
       "secretkey",
       {
         expiresIn: "1d",
-      }
+      },
     );
 
     res.json({
       message: "Login successful",
       token,
     });
-
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -86,5 +81,5 @@ const login = async (req, res) => {
 
 module.exports = {
   signup,
-   login,
+  login,
 };

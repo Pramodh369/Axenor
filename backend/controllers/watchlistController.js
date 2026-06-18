@@ -31,12 +31,14 @@ const createWatchlist = async (req, res) => {
 
 const updateWatchlist = async (req, res) => {
   try {
-    const watchlist =
-      await Watchlist.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        { new: true }
-      );
+    const watchlist = await Watchlist.findOneAndUpdate(
+      {
+        _id: req.params.id,
+        user: req.user.id,
+      },
+      req.body,
+      { new: true },
+    );
 
     res.json(watchlist);
   } catch (error) {
@@ -45,13 +47,12 @@ const updateWatchlist = async (req, res) => {
     });
   }
 };
-
 const deleteWatchlist = async (req, res) => {
   try {
-    const watchlist =
-      await Watchlist.findByIdAndDelete(
-        req.params.id
-      );
+    const watchlist = await Watchlist.findOneAndDelete({
+      _id: req.params.id,
+      user: req.user.id,
+    });
 
     res.json({
       message: "Deleted",

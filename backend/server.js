@@ -8,6 +8,9 @@ const watchlistRoutes = require("./routes/watchlistRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const fundRoutes = require("./routes/fundRoutes");
 const authRoutes = require("./routes/authRoutes");
+const marketRoutes = require(
+  "./routes/marketRoutes"
+);
 
 dotenv.config();
 
@@ -22,6 +25,10 @@ app.use("/api/watchlist", watchlistRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/funds", fundRoutes);
 app.use("/api/auth", authRoutes);
+app.use(
+  "/api/market",
+  marketRoutes
+);
 
 app.get("/", (req, res) => {
   res.send("Axenor Backend Running 🚀");

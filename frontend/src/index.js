@@ -27,6 +27,8 @@ import SupportPage from "./landing_page/support/SupportPage";
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
 import Notfound from "./landing_page/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 AOS.init({
   duration: 1000,
@@ -131,5 +133,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Layout />
+
+    <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      theme="colored"
+    />
   </BrowserRouter>
 );

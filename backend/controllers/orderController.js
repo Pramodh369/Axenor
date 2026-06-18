@@ -30,10 +30,13 @@ const createOrder = async (req, res) => {
 
 const updateOrder = async (req, res) => {
   try {
-    const order = await Order.findByIdAndUpdate(
-      req.params.id,
+    const order = await Order.findOneAndUpdate(
+      {
+        _id: req.params.id,
+        user: req.user.id,
+      },
       req.body,
-      { new: true }
+      { new: true },
     );
 
     res.json(order);
@@ -43,12 +46,13 @@ const updateOrder = async (req, res) => {
     });
   }
 };
-
 const deleteOrder = async (req, res) => {
   try {
-    const order = await Order.findByIdAndDelete(
-      req.params.id
-    );
+    const order =
+      await Order.findOneAndDelete({
+        _id: req.params.id,
+        user: req.user.id,
+      });
 
     res.json({
       message: "Order deleted",

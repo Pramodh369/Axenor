@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import {
   Link,
   useLocation,
@@ -8,44 +9,83 @@ import {
 function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
+  
+const handleLogout = () => {
+  localStorage.removeItem("token");
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
+  toast.success(
+    "Logged Out Successfully 👋"
+  );
 
-    navigate("/login");
-  };
-
+  navigate("/login");
+};
+  
   const menuItem = (path, icon, text) => (
     <Link
       to={path}
-      className={`text-decoration-none d-block mb-3 p-2 rounded ${
+      className={`text-decoration-none d-block mb-3 px-3 py-2 rounded ${
         location.pathname === path
           ? "bg-primary text-white"
           : "text-white"
       }`}
     >
-      {icon} {text}
+      <span className="me-2">
+        {icon}
+      </span>
+      {text}
     </Link>
   );
 
   return (
     <div
-      className="bg-dark text-white p-4"
+      className="d-none d-md-block bg-dark text-white p-4"
       style={{
-        width: "250px",
+        width: "280px",
         minHeight: "100vh",
+        flexShrink: 0,
+        position: "sticky",
+        top: 0,
       }}
     >
       <h2 className="fw-bold mb-5">
         Axenor
       </h2>
 
-      {menuItem("/dashboard", "📊", "Dashboard")}
-      {menuItem("/watchlist", "📈", "Watchlist")}
-      {menuItem("/holdings", "💼", "Holdings")}
-      {menuItem("/orders", "📑", "Orders")}
-      {menuItem("/funds", "💰", "Funds")}
-      {menuItem("/settings", "⚙", "Settings")}
+      {menuItem(
+        "/dashboard",
+        "📊",
+        "Dashboard"
+      )}
+
+      {menuItem(
+        "/watchlist",
+        "📈",
+        "Watchlist"
+      )}
+
+      {menuItem(
+        "/holdings",
+        "💼",
+        "Holdings"
+      )}
+
+      {menuItem(
+        "/orders",
+        "📑",
+        "Orders"
+      )}
+
+      {menuItem(
+        "/funds",
+        "💰",
+        "Funds"
+      )}
+
+      {menuItem(
+        "/settings",
+        "⚙️",
+        "Settings"
+      )}
 
       <button
         className="btn btn-danger w-100 mt-4"

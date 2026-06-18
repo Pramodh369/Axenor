@@ -175,3 +175,34 @@ body {
 section {
   transition: all 0.3s ease;
 }
+.ticker-container {
+  background: #1e222d;
+  color: white;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  margin-right: 60px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -63,10 +63,13 @@ const createHolding = async (req, res) => {
 };
 const updateHolding = async (req, res) => {
   try {
-    const holding = await Holding.findByIdAndUpdate(
-      req.params.id,
+    const holding = await Holding.findOneAndUpdate(
+      {
+        _id: req.params.id,
+        user: req.user.id,
+      },
       req.body,
-      { new: true }
+      { new: true },
     );
 
     res.json(holding);
@@ -78,9 +81,10 @@ const updateHolding = async (req, res) => {
 };
 const deleteHolding = async (req, res) => {
   try {
-    const holding = await Holding.findByIdAndDelete(
-      req.params.id
-    );
+    const holding = await Holding.findOneAndDelete({
+      _id: req.params.id,
+      user: req.user.id,
+    });
 
     res.json({
       message: "Holding deleted successfully",

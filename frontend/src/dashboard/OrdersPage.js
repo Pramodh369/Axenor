@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
 
+
 function OrdersPage() {
   const [orders, setOrders] = useState([]);
 
@@ -110,8 +111,10 @@ function OrdersPage() {
   };
 
   return (
-    <div className="d-flex">
+    <div className="d-md-flex">
       <Sidebar />
+      
+
 
       <div className="flex-grow-1 p-5">
 
@@ -123,7 +126,7 @@ function OrdersPage() {
 
           <div className="row g-3">
 
-            <div className="col-md-3">
+            <div className="col-12 col-md-3">
               <input
                 type="text"
                 className="form-control"
@@ -133,7 +136,7 @@ function OrdersPage() {
               />
             </div>
 
-            <div className="col-md-2">
+            <div className="col-12 col-md-2">
               <select
                 className="form-control"
                 value={type}
@@ -180,7 +183,7 @@ function OrdersPage() {
         </div>
 
         <div className="card border-0 shadow-sm p-4">
-
+                     <div className="table-responsive">
           <table className="table">
 
             <thead>
@@ -218,9 +221,9 @@ function OrdersPage() {
                   <td>{item.status}</td>
 
                   <td>
-
+                        <div className="d-flex flex-column flex-md-row gap-1">
                     <button
-                      className="btn btn-warning btn-sm me-2"
+                      className="btn btn-warning btn-sm"
                       onClick={() => handleEdit(item)}
                     >
                       Edit
@@ -234,6 +237,7 @@ function OrdersPage() {
                     >
                       Delete
                     </button>
+                  </div>
 
                   </td>
 
@@ -244,6 +248,7 @@ function OrdersPage() {
 
           </table>
 
+        </div>
         </div>
 
       </div>
