@@ -177,13 +177,6 @@ User passwords are securely stored using bcrypt hashing.
 
 ---
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/Pramodh369/Axenor.git
-cd Axenor
-```
-
 ## Author
 
 **Pramodh**
