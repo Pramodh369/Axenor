@@ -29,7 +29,7 @@ function DashboardPage() {
       const token = localStorage.getItem("token");
 
       const holdingsRes = await axios.get(
-        "http://localhost:5000/api/holdings",
+        "https://axenor-7t91.onrender.com/api/holdings",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ function DashboardPage() {
       );
 
       const watchlistRes = await axios.get(
-        "http://localhost:5000/api/watchlist",
+        "https://axenor-7t91.onrender.com/api/watchlist",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ function DashboardPage() {
         },
       );
 
-      const fundsRes = await axios.get("http://localhost:5000/api/funds", {
+      const fundsRes = await axios.get("https://axenor-7t91.onrender.com/api/funds", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

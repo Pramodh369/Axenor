@@ -52,7 +52,7 @@ function Signup() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://axenor-7t91.onrender.com/api/auth/signup",
         {
           name,
           email,

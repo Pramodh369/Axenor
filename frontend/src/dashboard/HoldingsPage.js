@@ -19,7 +19,7 @@ function HoldingsPage() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5000/api/holdings", {
+      const res = await axios.get("https://axenor-7t91.onrender.com/api/holdings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -36,7 +36,7 @@ function HoldingsPage() {
 
     if (editId) {
       await axios.put(
-        `http://localhost:5000/api/holdings/${editId}`,
+        `https://axenor-7t91.onrender.com/api/holdings/${editId}`,
         {
           stock,
           qty,
@@ -53,7 +53,7 @@ function HoldingsPage() {
       setEditId(null);
     } else {
       await axios.post(
-        "http://localhost:5000/api/holdings",
+        "https://axenor-7t91.onrender.com/api/holdings",
         {
           stock,
           qty,
@@ -80,7 +80,7 @@ function HoldingsPage() {
 };
   const deleteHolding = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/holdings/${id}`);
+      await axios.delete(`https://axenor-7t91.onrender.com/api/holdings/${id}`);
 
       fetchHoldings();
     } catch (error) {

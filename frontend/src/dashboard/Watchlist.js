@@ -13,7 +13,7 @@ function Watchlist() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/watchlist",
+        "https://axenor-7t91.onrender.com/api/watchlist",
         {
           headers: {
             Authorization: `Bearer ${token}`,

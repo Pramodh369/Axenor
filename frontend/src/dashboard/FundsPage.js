@@ -16,7 +16,7 @@ function FundsPage() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5000/api/funds", {
+      const res = await axios.get("https://axenor-7t91.onrender.com/api/funds", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -33,7 +33,7 @@ function FundsPage() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/funds/add",
+        "https://axenor-7t91.onrender.com/api/funds/add",
         {
           amount,
           description: "Funds Added",
@@ -57,7 +57,7 @@ function FundsPage() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/funds/withdraw",
+        "https://axenor-7t91.onrender.com/api/funds/withdraw",
         {
           amount,
           description: "Funds Withdrawn",

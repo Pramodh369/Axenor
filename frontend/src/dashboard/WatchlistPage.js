@@ -18,7 +18,7 @@ function WatchlistPage() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5000/api/watchlist", {
+      const res = await axios.get("https://axenor-7t91.onrender.com/api/watchlist", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -36,7 +36,7 @@ function WatchlistPage() {
 
       if (editId) {
         await axios.put(
-          `http://localhost:5000/api/watchlist/${editId}`,
+          `https://axenor-7t91.onrender.com/api/watchlist/${editId}`,
           {
             stock,
             price,
@@ -52,7 +52,7 @@ function WatchlistPage() {
         setEditId(null);
       } else {
         await axios.post(
-          "http://localhost:5000/api/watchlist",
+          "https://axenor-7t91.onrender.com/api/watchlist",
           {
             stock,
             price,
@@ -83,7 +83,7 @@ function WatchlistPage() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/watchlist/${id}`, {
+      await axios.delete(`https://axenor-7t91.onrender.com/api/watchlist/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

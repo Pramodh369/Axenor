@@ -21,7 +21,7 @@ function OrdersPage() {
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      "http://localhost:5000/api/orders",
+      "https://axenor-7t91.onrender.com/api/orders",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ function OrdersPage() {
 
     if (editId) {
       await axios.put(
-        `http://localhost:5000/api/orders/${editId}`,
+        `https://axenor-7t91.onrender.com/api/orders/${editId}`,
         {
           stock,
           type,
@@ -58,7 +58,7 @@ function OrdersPage() {
       setEditId(null);
     } else {
       await axios.post(
-        "http://localhost:5000/api/orders",
+        "https://axenor-7t91.onrender.com/api/orders",
         {
           stock,
           type,
@@ -88,7 +88,7 @@ function OrdersPage() {
     const token = localStorage.getItem("token");
 
     await axios.delete(
-      `http://localhost:5000/api/orders/${id}`,
+      `https://axenor-7t91.onrender.com/api/orders/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

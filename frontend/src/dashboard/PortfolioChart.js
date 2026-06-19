@@ -22,7 +22,7 @@ function PortfolioChart() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/holdings",
+        "https://axenor-7t91.onrender.com/api/holdings",
         {
           headers: {
             Authorization: `Bearer ${token}`,

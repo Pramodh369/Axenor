@@ -30,7 +30,7 @@ function MarketTicker() {
   const fetchMarket = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/market"
+        "https://axenor-7t91.onrender.com/api/market"
       );
 
       setStocks(res.data);
