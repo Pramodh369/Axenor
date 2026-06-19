@@ -1,8 +1,22 @@
 # Axenor
 
-Axenor is a full-stack stock brokerage platform that enables users to manage investments through a secure and intuitive dashboard. The application provides portfolio tracking, watchlist management, order monitoring, fund management, authentication, and market insights in a modern web interface.
+Axenor is a full-stack stock brokerage platform that enables users to manage investments through a secure and intuitive dashboard. The application provides portfolio tracking, watchlist management, order monitoring, fund management, authentication, and market insights through a modern and responsive web interface.
 
-The project is built using the MERN stack and follows industry-standard practices including JWT authentication, password hashing, protected routes, cloud database integration, responsive design, and modular architecture.
+Built using the MERN Stack, Axenor follows industry-standard development practices including JWT authentication, password hashing, protected routes, cloud database integration, CI/CD automation, and responsive design.
+
+---
+
+## Live Demo
+
+### Frontend
+
+https://axenor-theta.vercel.app
+
+### Backend API
+
+https://axenor-7t91.onrender.com
+
+> Note: The backend is hosted on Render's free tier. The first request after a period of inactivity may take a few seconds while the server wakes up.
 
 ---
 
@@ -28,7 +42,7 @@ The project is built using the MERN stack and follows industry-standard practice
 ### Dashboard Analytics
 
 * Portfolio Summary Dashboard
-* Live Market Ticker
+* Market Overview
 * Portfolio Performance Charts
 * Recent Orders Overview
 * Holdings Overview
@@ -38,7 +52,7 @@ The project is built using the MERN stack and follows industry-standard practice
 * Responsive Design
 * Modern UI Components
 * Toast Notifications
-* Smooth Animations using AOS
+* Smooth Animations
 * Clean Navigation System
 
 ---
@@ -50,7 +64,7 @@ The project is built using the MERN stack and follows industry-standard practice
 * React.js
 * React Router DOM
 * Axios
-* Bootstrap
+* Bootstrap 5
 * Recharts
 * React Toastify
 * AOS
@@ -66,6 +80,17 @@ The project is built using the MERN stack and follows industry-standard practice
 
 * MongoDB Atlas
 * Mongoose
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+* MongoDB Atlas (Database)
+
+### CI/CD
+
+* GitHub Actions
+* Automatic Deployment via GitHub Integration
 
 ---
 
@@ -91,11 +116,12 @@ Axenor/
 │   │   └── components/
 │   └── package.json
 │
+├── .github/
+│   └── workflows/
+│
 ├── .gitignore
 └── README.md
 ```
-
----
 
 ## Installation
 
@@ -121,19 +147,15 @@ npm install
 npm start
 ```
 
----
-
 ## Environment Variables
 
 Create a `.env` file inside the backend folder.
 
 ```env
-MONGO_URI=your_mongodb_connection_string
+MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 PORT=5000
 ```
-
----
 
 ## Testing
 
@@ -149,33 +171,25 @@ Current test coverage includes:
 * Portfolio Value Calculation
 * Funds Balance Calculation
 
----
-
 ## Database Collections
 
 The application uses MongoDB Atlas and stores data in the following collections:
 
-```text
-users
-holdings
-watchlists
-orders
-funds
-```
+* users
+* holdings
+* watchlists
+* orders
+* funds
 
 User passwords are securely stored using bcrypt hashing.
 
----
-
 ## Future Enhancements
 
-* Real-Time Stock Market API Integration
+* Real-Time Market Data Integration
 * Advanced Portfolio Analytics
 * Portfolio Reports Export
 * Email Notifications
 * Stock Search & Filtering
-
----
 
 ## Author
 
@@ -183,10 +197,6 @@ User passwords are securely stored using bcrypt hashing.
 
 Full-Stack MERN Developer
 
----
-
 ## License
 
 This project is licensed under the MIT License.
-
-Copyright (c) 2026 Pramodh
