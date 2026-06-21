@@ -19,6 +19,16 @@ https://axenor-7t91.onrender.com
 > Note: The backend is hosted on Render's free tier. The first request after a period of inactivity may take a few seconds while the server wakes up.
 
 ---
+## Demo Access
+
+Use the following demo account to explore the platform:
+
+Email: test@gmail.com
+Password: 123456
+
+> This account contains sample data for demonstration and evaluation purposes.
+---
+
 ## 📸 Application Preview
 
 | Landing Page | About |
