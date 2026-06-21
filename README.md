@@ -19,6 +19,24 @@ https://axenor-7t91.onrender.com
 > Note: The backend is hosted on Render's free tier. The first request after a period of inactivity may take a few seconds while the server wakes up.
 
 ---
+## 📸 Application Preview
+
+| Landing Page | About |
+|-------------|-------------|
+| ![](screenshots/Landing%20Page.png) | ![](screenshots/About.png) |
+
+| Authentication | Dashboard |
+|-------------|-------------|
+| ![](screenshots/Authentication.png) | ![](screenshots/Dashboard.png) |
+
+| Watchlist Management | Order Tracking |
+|-------------|-------------|
+| ![](screenshots/Watchlist%20Management.png) | ![](screenshots/Order%20Tracking.png) |
+
+| Funds Management |
+|-------------|
+| ![](screenshots/Funds%20Management.png) |
+---
 
 ## Features
 
